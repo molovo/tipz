@@ -30,3 +30,7 @@ Tipz is licensed under The MIT License (MIT)
 ## Team
 
 * [James Dinsdale](http://molovo.co)
+
+## Related
+
+* **[alias-tips](https://github.com/djui/alias-tips)** - A Python implementation of the same concept  
