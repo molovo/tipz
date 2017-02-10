@@ -23,7 +23,8 @@ function _tipz_find_match() {
 
     # Create a regex that finds an exact match for
     # the current argument string
-    local pattern=$'^[\'\"]?'${(@)args[@]}$'[\'\"]?$'
+    args="${(@)args[@]}"
+    local pattern=$'^[\'\"]?'${args//([^a-zA-Z0-9])/\\$1}$'[\'\"]?$'
 
     # Check if the command matches the regex
     if [[ "$command" =~ $pattern ]]; then
