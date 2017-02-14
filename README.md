@@ -21,6 +21,14 @@ git clone https://github.com/molovo/tipz tipz && cd tipz
 echo "source $(pwd)/tipz.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
+## Configuration
+
+You can customize the prefix text if you'd like, by setting `ZSH_PLUGIN_TIPZ_TEXT`
+
+```sh
+ZSH_PLUGIN_TIPZ_TEXT='💡 '
+```
+
 ## License
 
 Copyright (c) 2016 James Dinsdale <hi@molovo.co> (molovo.co)
