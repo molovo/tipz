@@ -11,10 +11,9 @@ function _tipz_find_match() {
   local oldIFS=$IFS
   IFS=$'\n' aliases=($(alias))
   IFS=$oldIFS
-  unset oldIFS
 
   # Loop through each of the aliases
-  for line in "$aliases[@]"; do
+  for line in "${aliases[@]}"; do
     # Split the line on '=' to separate the command
     # and its alias
     bits=("${(s/=/)line}")
@@ -24,7 +23,7 @@ function _tipz_find_match() {
     # Create a regex that finds an exact match for
     # the current argument string
     args="${(@)args[@]}"
-    local pattern=$'^[\'\"]?'${args//([^a-zA-Z0-9])/\\$1}$'[\'\"]?$'
+    local pattern=$'^[\'\"]?'${args//([\{\}\(\)\[\]\*\?\:\\\.])/\\$1}$'[\'\"]?$'
 
     # Check if the command matches the regex
     if [[ "$command" =~ $pattern ]]; then
@@ -49,7 +48,7 @@ function _tipz_find_match() {
 ###
 function _tipz_process {
   local -a cmd; cmd=($@)
-  integer i=${#cmd}
+  integer i=$(( ${#cmd} + 1 ))
 
   # Loop for the length of the argument list, knocking
   # an argument from the end of the list each time, and
