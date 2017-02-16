@@ -61,7 +61,7 @@ function _tipz_process {
     # If the search exited successfully,
     # output the tip to the user
     if [[ $? -eq 0 ]]; then
-      echo "\033[1;34mTipz:\033[0;m \033[0;34m$result ${(@)cmd:$i}\033[0;m"
+      echo "\033[1;34m${TIPZ_TEXT:-'Tipz:'}\033[0;m \033[0;34m$result ${(@)cmd:$i}\033[0;m"
       return 0
     fi
 
