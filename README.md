@@ -21,9 +21,17 @@ git clone https://github.com/molovo/tipz tipz && cd tipz
 echo "source $(pwd)/tipz.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
+## Configuration
+
+You can customize the prefix text if you'd like, by setting `TIPZ_TEXT`
+
+```sh
+TIPZ_TEXT='💡 '
+```
+
 ## License
 
-Copyright (c) 2016 James Dinsdale <hi@molovo.co> (molovo.co)
+Copyright (c) 2016,2017 James Dinsdale <hi@molovo.co> (molovo.co)
 
 Tipz is licensed under The MIT License (MIT)
 
